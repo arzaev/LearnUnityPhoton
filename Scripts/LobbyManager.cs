@@ -40,6 +40,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("Game");
     }
 
+    public override void OnJoinRandomFailed(short returnCode, string message)
+    {
+        Log("Random join failed");
+
+    }
+
     private void Log(string message)
     {
         Debug.Log(message);

@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
+    public GameObject PlayerPrefab;
+
     void Start()
     {
-        
+        Vector3 pos = new Vector3(Random.Range(-102, -50), Random.Range(1, 45), 88);
+        PhotonNetwork.Instantiate(PlayerPrefab.name, pos, Quaternion.identity);
     }
 
     // Update is called once per frame
